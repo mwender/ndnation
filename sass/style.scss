@@ -1,0 +1,37 @@
+/*!
+Theme Name: NDNation
+Theme URI: https://www.gazlab.com
+Author: GazLab
+Author URI: https://www.gazlab.com
+Description: Wordpress Theme for NDNation
+Version: 1.0.0
+License: GNU General Public License v3.0 /
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Twitter Bootstrap
+*/
+
+/****** Variables ******/
+
+$black: #000;
+$white: #FFFFFF;
+
+$ndblue: #0C2340;
+$nddgold: #C99700;
+$ndlgold: #d4a51a;
+$ndmgold: #AE9142;
+$ndgreen: #00843D;
+
+/****** Partials ******/
+
+@import "_partials/main";
+@import "_partials/header";
+@import "_partials/home";
+@import "_partials/widgets";
+@import "_partials/schedules";
+@import "_partials/page";
+@import "_partials/footer";
+@import "_partials/responsive";

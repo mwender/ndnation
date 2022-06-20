@@ -1,0 +1,199 @@
+.schedule-wrap {
+	.schedule-body {
+		display:flex;
+		flex-wrap:wrap;
+		.game-head-wrap {
+			.game-head-title {
+				font-family: 'Roboto Slab', 'Courier New', 'Courier', 'Bookman', serif;
+				font-size: 16px;
+				border-bottom: 3px solid #D4A51A;
+				color: #FFF;
+				background-color: #0C2340;
+				padding-top: 8px;
+				padding-bottom: 8px;
+			}
+		}
+		.game-wrap {
+			width:100%;
+			position: relative;
+			> div {
+				padding-top: 10px;
+				padding-bottom: 10px;
+				.mobile-game-heading {
+					color: #0C2340;
+					font-size: 15px;
+					font-weight: bold;
+				}
+			}
+			.game-date {
+				padding-right: 0;
+			}
+			.game-opponent {
+				.svg-inline--fa {
+					color: $ndblue;
+					font-size: 15px;
+				}
+			}
+			&:nth-child(even){
+				.game-date, .game-opponent, .game-loc, .game-score {
+					background-color: #CCC;
+				}
+			}
+			.game-score {
+				padding-right:30px;
+				.overtime,
+				.win-loss {
+			    font-size: 12px;
+			    vertical-align: top;
+			    display: inline-block;
+			    padding-top: 3px;
+				}
+			}
+			.game-more-info-trigger {
+				position: absolute;
+				cursor: pointer;
+				right: 25px;
+				top: -3px;
+				font-size:1.35em;
+				z-index:100;
+				.svg-inline--fa {
+					color: #00843D;
+					-webkit-transition: all 0.5s ease;
+					-moz-transition: all 0.5s ease;
+					-o-transition: all 0.5s ease;
+					transition: all 0.5s ease;
+				}
+				&.active {
+					.svg-inline--fa {
+						transform: rotate(45deg);
+					}
+				}
+			}
+			.game-more-info {
+				display: none;
+				padding-bottom: 10px;
+				padding-top:0;
+				padding-right: 16px;
+				border-bottom: 4px solid $nddgold;
+				.game-mi-header {
+					background-color: #D4A51A;
+					color: #0C2340;
+					font-family: 'Roboto Slab', 'Courier New', 'Courier', 'Bookman', serif;
+					font-size: 15px;
+					font-weight: bold;
+					margin-bottom: 5px;
+					padding: 5px 10px;
+					position: relative;
+					text-transform: uppercase;
+					.game-mi-head-col {
+						float: left;
+						width: 50%;
+						.game-mi-head-sep {
+						  display: inline-block;
+						  font-size: 10px;
+						  vertical-align: top;
+						  padding-top: 0.45em;
+						  &.away {
+								padding-top: 0.3em;	
+							}
+						}
+					}
+				}
+				.game-mi-content {
+					.game-mi-head {
+						font-size: 15px;
+						font-weight: bold;
+						margin: 5px 0;
+						.mi-head-title {
+							display: block;
+							padding-bottom: 5px;
+							border-bottom: 1px solid;
+						}
+					}
+					a {
+						color: #00843D;
+					}
+					.game-mi-school-info {
+						.game-mi-opponent-info {
+							min-height: 160px;
+							position: relative;
+							.game-mi-opponent-logo {
+								position: absolute;
+								top: 0px;
+								left: 15%;
+								opacity: 0.1;
+								overflow: visible;
+								&.with-links {
+									width: 96%;
+									text-align: center;
+									left: 0;
+								}
+							}
+						}
+					}
+					.game-mi-tl {
+						a {
+							color: #FFF;
+						}
+					}
+					.game-mi-title {
+						font-weight: bold;
+					}
+					.game-mi-items {
+						padding: 0;
+					}
+					.game-mi-item {
+						list-style: none;
+					}
+					.game-mi-item a {
+						display: inline-block;
+					}
+				}
+			}
+		}
+		> .game-key-wrap ~ .game-key-wrap{
+			order:-1;
+			.game-key-items {
+				background-color:transparent;
+				color:$ndblue;
+			}
+		}
+		.game-key-wrap {
+			.game-key-items {
+				background-color: $ndblue;
+				color: $white;
+				padding: 5px 10px;
+				.game-key {
+  				display: inline-block;
+					list-style: none;
+					margin-right: 20px;
+					.conf-logo {
+						background-color: $white;
+						border-radius: 2px;
+						display: inline-block;
+						&.acc {
+							padding: 0 5px 0 2px;
+						}
+						&.bten {
+							padding: 0px 5px 0 5px;
+							.game-conf-icon {
+								margin-top: -2px;
+							}
+						}
+					}
+					.svg-inline--fa {
+						font-size: 15px;
+					}
+				}
+			}
+			.pre-icon {
+				margin-top: -1px;
+			}
+		}
+	}
+	.pre-icon {
+		display: inline-block;
+    margin-top: -2px;
+    vertical-align: top;
+	}
+}

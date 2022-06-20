@@ -1,0 +1,117 @@
+body.login {
+	background-color: #d7d7d7;
+	background-image:url('/wp-content/themes/ndnation/images/login-bkg.jpg');
+	background-size:cover;
+	background-position:top center;
+	background-repeat: no-repeat;
+	background-attachment:fixed;
+}
+.login h1 a {
+	cursor: auto;
+}
+.login div#login h1 a {
+    background-image: url('/wp-content/themes/ndnation/images/ndnation-logo-smaller.png');
+    background-size: 100%;
+    height: 40px;
+    width: 230px;
+    padding-bottom: 0px;
+}
+.login #login_error,
+.login .message {
+	background-color: #0C2340;
+	border: 3px solid #C99700;
+	border-radius: 15px;
+	color: #FFF;
+	font-family: 'Roboto Slab', 'Courier New', 'Courier', 'Bookman', serif;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+.login #login_error a,
+.login .message a {
+	color: #C99700;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+.login #login_error a:hover,
+.login .message a:hover,
+.login #login_error a:focus,
+.login .message a:focus {
+	color: #C99700;
+	opacity: 0.8;
+}
+.login form {
+	background: #0C2340;
+	border-radius: 15px;
+	border: 3px solid #C99700;
+	padding: 26px 24px 26px;
+	text-transform: uppercase;
+}
+.login label {
+	color: #FFF;
+}
+.login form .input, .login input[type=text] {
+	border: 2px solid #C99700;
+}
+p.forgetmenot {
+    margin-top: 9px;
+}
+.login form input[type=checkbox]{
+	border: 1px solid #C99700;
+	background: #FFF;
+	height: 20px;
+	width: 20px;
+}
+input[type=checkbox]:checked:before {
+	color: #00843D;
+	margin: -1px 0 0 -2px;
+}
+#login #lostpasswordform .submit .button-primary,
+#login #loginform .submit .button-primary {
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+	outline: none;
+	text-shadow: none;
+	text-transform: uppercase;
+	padding: 10px 25px;
+	line-height: 20px;
+	height: 40px;
+}
+.wp-core-ui .button-primary {
+  background: #00843D !important;
+  border-color: #00843D !important;
+  color: #FFF !important;
+  -webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+.wp-core-ui .button-primary:hover {
+	opacity: 0.8;
+}
+.login #backtoblog a, 
+.login #nav a {
+	color: #C99700;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+.login #backtoblog a:hover,
+.login #backtoblog a:focus, 
+.login #nav a:hover,
+.login #nav a:focus {
+	color: #C99700;
+	opacity: 0.8;
+}
+.login #nav {
+	float: left;
+	padding: 0 24px 0 0;
+}
+.login #backtoblog {
+	float: right;
+	padding: 0 0 0 24px;
+	margin: 24px 0 0;
+}

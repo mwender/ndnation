@@ -1,0 +1,103 @@
+.ad-slot {
+	margin-bottom: 50px;
+	text-align: center;
+}
+.schedule-tabs {
+	.schedule-tabs-items {
+		padding: 0;
+		margin: 0;
+		display:flex;
+		.schedule-tab-item {
+			flex:1;
+			list-style: none;
+			text-align: center;
+			border-right:3px solid #fff;
+			a {
+				display: block;
+				background-color: $ndblue;
+				color: $white;
+				padding: 4px 0;
+			}
+			&:last-of-type{border:0;}
+		}
+		.schedule-tab-item.ui-tabs-active {
+			a {
+				opacity:.5;
+			}
+		}
+	}
+}
+#schedule-wrap {
+	margin-top:20px;
+	.widget-head {
+		.widget-title {
+			margin-top: 0;
+		}
+	}
+	table {
+	  margin-bottom: 10px;
+	  width: 100%;
+	}
+	td, th {
+		padding: 3px 5px 3px 0;
+		border-radius: 0;
+	}
+	.row.game-row:last-of-type {
+  	margin-bottom: 10px;
+	}
+	.row.game-row {
+  	margin-bottom: 5px;
+  	font-size: 12px;
+  	.game-date {
+  		padding: 3px 5px;
+  	}
+  	.game-opponent {
+  		a {
+  			text-decoration: underline;
+  		}
+  	}
+  	.game-time {
+		  text-align: right;
+			svg.svg-inline--fa {
+			  font-size: 10px;
+			  position: relative;
+			  bottom: 2px;
+			}
+			.no-time-spacer {
+				display: inline-block;
+				width: 50px;
+			}
+		}
+		&:nth-child(even){
+			background-color: #CCC;
+		}
+	}
+	.schedule-at-symbol,
+	.schedule-vs-symbol {
+	  color: $ndblue;
+	  font-weight: 700;
+	}
+	.schedule-vs-symbol {
+	  display: inline-block;
+	  font-size: 8px;
+	  padding-top: 3px;
+	  vertical-align: top;
+	}
+	.neutral-site-name {
+	  display: inline-block;
+	  font-size: 10px;
+	  vertical-align: top;
+	}
+}
+#nl-widget-wrap {
+	margin-top: 20px;
+	.widget-body {
+		.nl-widget-items {
+			padding: 0;
+			.nl-widget-item {
+				list-style: none;
+			}
+		}
+	}
+}
+.schedule-block {margin: 10px 0 20px 0;}

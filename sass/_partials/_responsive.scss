@@ -1,0 +1,245 @@
+//Small Laptop & Below
+@media only screen and (max-width: 991px){
+	body {
+		font-size:16px;
+	}
+	.sidebar {
+		width: 100%;
+	}
+	#mega-menu-wrap-primary {
+		#mega-menu-primary {
+			display: none !important;
+		}
+		.mega-menu-toggle {
+			background: $ndblue;
+			.mega-toggle-block-1 {
+				&:after {
+					font-size: 35px;
+				}
+			}
+			&.mega-menu-open {
+				& + #mega-menu-primary {
+					display: block !important;
+					position: absolute;
+			    top: 62px !important;
+			    background-color: $ndblue;
+			    z-index: 100;
+				}
+			}
+		}
+	}
+}
+
+//Medium
+@media only screen and (max-width: 1220px) and (min-width: 993px) {
+	.container { width:94%;}
+}
+
+//Small
+@media only screen  and (max-width: 992px) and (min-width: 769px){
+	.container { width:91%;}
+	.hp-sidebar {width:calc(33.33333% - 25px);margin-right:25px;}
+	.hp-main-left, .hp-main-right {width:calc(50% - 10px)}
+	.hp-main-left {margin-right:10px;}
+	.hp-main-right {margin-left:10px;}	
+}
+
+//Extra Small
+@media only screen and (max-width: 768px){
+	.container { width:88%;}
+	.entry-content img {float:none;display:block;margin:0 auto;margin-bottom:20px;}
+	.nlarchive-item, .nl .nl-list .nl-items .nl-item {
+		padding-top:5px;
+		padding-bottom:5px;
+	}
+
+}
+
+//Custom Hompeage Breakpoints
+@media only screen and (max-width: 850px){
+	.hp-sidebar, .hp-main, .home-leaderboard {width:100%;margin-right:0;}
+	.premium-ad-slot {width: 100%;margin-right: 0;}
+	.hp-main-left, .hp-main-right {width:calc(50% - 10px)}
+	.hp-main-left {margin-right:10px;}
+	.hp-main-right {margin-left:10px;}
+	.nl .nl-list .nl-items {column-count:2;column-width:270px;}
+	.mobile-hide {
+		display: none;
+	}
+	.mobile-show {
+		display: block;
+	}
+}
+@media only screen and (max-width: 575px){
+	.local-ad-mobile {display:block;}
+	.local-ad-desktop {display:none;}
+	.hp-main-left, .hp-main-right {
+		width:100%;
+		margin-right:0;
+		margin-left:0;
+	}
+	.content-box, .main-content-inner {margin-bottom:30px;}
+	.nl .nl-title {
+		h3{float:left;display:inline-block;}
+		.toggle{
+			display:inline-block;
+			color:$ndgreen;
+			font-size:1.75em;
+			margin: 17px 0 0 10px;
+			cursor:pointer;
+			.svg-inline--fa {
+				-webkit-transition: all 0.5s ease;
+				-moz-transition: all 0.5s ease;
+				-o-transition: all 0.5s ease;
+				transition: all 0.5s ease;
+			}
+			&.active {
+				.svg-inline--fa {
+					transform: rotate(45deg);
+				}
+			}
+		}
+	}
+	.nl-list{display:none;}
+	.nl#nl-football-news{
+		.nl-list{display:block;}
+		.nl-title .toggle {display:none;}
+	}
+	.schedule-link-items {
+		column-count: 2;
+	}
+}
+
+//Custom Header Nav Breakpoints
+@media only screen and (max-width:991px){
+	
+	.top-navigation {
+		display: none;
+	}
+	.search-icon {
+		display: none;
+	}
+	.widget_login_widget form {
+		border:0;
+		padding:0 15px;
+	}
+	.site-header #mega-menu-wrap-primary {
+		margin-right: 0;
+	}
+	#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a.mega-menu-link {
+		padding:10px 20px;
+		font-size:1.1em;
+		line-height:normal;
+		margin:10px 0;
+	}
+	
+	#mega-menu-wrap-primary #mega-menu-primary>li.mega-menu-item.mega-current-menu-item>a.mega-menu-link,
+	#mega-menu-wrap-primary #mega-menu-primary>li.mega-menu-item.mega-current-menu-ancestor>a.mega-menu-link,
+	#mega-menu-wrap-primary #mega-menu-primary>li.mega-menu-item.mega-current-page-ancestor>a.mega-menu-link,
+	#mega-menu-wrap-primary #mega-menu-primary>li.mega-menu-item.mega-toggle-on>a.mega-menu-link, #mega-menu-wrap-primary 
+	#mega-menu-primary>li.mega-menu-item>a.mega-menu-link:hover, 
+	#mega-menu-wrap-primary #mega-menu-primary>li.mega-menu-item>a.mega-menu-link:focus {
+		border:0;
+	}
+	
+	#mega-menu-wrap-primary #mega-menu-primary>li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item a.mega-menu-link{
+		padding: 5px 15px;
+	}
+	#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu>ul.mega-sub-menu>li.mega-menu-row .mega-menu-column>ul.mega-sub-menu>li.mega-menu-item>a.mega-menu-link{
+		padding: 5px;
+	}
+	#mega-menu-wrap-primary #mega-menu-primary>li.mega-menu-flyout ul.mega-sub-menu,
+	#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu>ul.mega-sub-menu {
+		box-shadow:none;
+	}
+	#mega-menu-wrap-primary .widget_login_widget input {margin-bottom:15px;}
+	.schedule-wrap .schedule-body .game-wrap {
+		.game-more-info-trigger {bottom:-3px;top:auto;}
+		.game-mi-content > div {
+			padding-left:15px;
+			margin-bottom:20px;
+			&:last-of-type{margin-bottom:0;}
+			.game-mi-items li a {padding:5px 0; margin:0 5px;}
+		}
+	}
+	.mega-mobile-mega-menu-social, .mega-mobile-mega-menu-search{
+		.mega-menu-link{display:none !important;}
+		.mega-sub-menu {
+			display:block !important;
+			background-color:$ndblue !important;
+			border:0 !important;
+			padding:0 !important;
+			color:#fff !important;
+		}
+		.search-form input[type="submit"] {display:inline-block !important;}
+	}
+	.mega-mobile-mega-menu-search {
+		form > label{width: calc(100% - 82px);}
+		form input[type=submit]{
+			float:right;
+			margin-top:1px;
+			padding: 7px 13px;
+		}
+	}
+	.socmed-item a svg.svg-inline--fa {
+		font-size: 30px;
+	}
+	.amp-socmed-items {margin-top:45px;}
+	.socmed-items {
+		text-align:center;
+		clear:both;
+		float:none;
+		padding:0;
+	}
+	.socmed-item {
+		margin:0 5px;
+	}
+	.site-header {
+		.site-navigation {
+			width:auto;
+		}
+	}
+	.site-header-inner {width:100%;}
+	.game-score {
+		padding-left: 15px;
+	}
+}
+@media only screen and (max-width:991px) and (min-width:675px){
+	.site-branding{
+		position:absolute;
+		top:30px;
+		left:255px;
+	}
+}
+@media only screen and (max-width:768px){
+	.main-content-inner .nlarchive-wrap .nl-archive-tabs .nl-archive-tab .archive-items .nlarchive-item {
+		width: 100%;
+	}
+}
+@media only screen and (max-width:674px) {
+	.site-header .site-header-inner img {position:relative;top:0;}
+	.site-header .site-description {margin-bottom:8px;margin-top:5px;}
+	
+}
+
+
+@media only screen and (min-width:992px){
+	.popular-topper{width:50% !important;}
+	.negative-top{margin-top:-54px;}
+	#mega-menu-wrap-primary .widget_login_widget input {margin: 0 15px 0 0 !important; }
+	.site-header .site-branding {
+		width:350px;
+		position:absolute;
+		top:-24px;
+		margin:0;
+		left:0;
+	}
+}
+@media only screen and (max-width:400px){
+	.site-header .site-description {
+		font-size:13px !important;
+	}
+	.schedule-link-items {
+    column-count: 1;
+	}
+}
