@@ -10,10 +10,12 @@
 	add_action( 'wp_footer', 'get_what_template');
 
 	function get_what_template() {
-		global $current_user;
-		get_currentuserinfo();
+		global $current_user, $template;
+		wp_get_current_user();
 
-		if( $current_user->user_login == ('greg.apel' || 'pam.wyman' || 'aaron.frerichs' || 'chris.diamond' || 'ethan.fry' || 'webapps')) global $template; echo($template);
+		$allowed_users = ['greg.apel', 'pam.wyman', 'aaron.frerichs', 'chris.diamond', 'ethan.fry', 'webapps'];
+		if( in_array( $current_user->user_login, $allowed_users ) )
+			echo( $template );
 	}
 
 
