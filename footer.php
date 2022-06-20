@@ -27,7 +27,7 @@ $site_name = get_field('site_name', 'option');
 
 	<?php 
 		wp_footer(); 
-		require("/home/elkabong/public_html/data/_phpinc/_foot_main.inc");
+		require_once( NDNATION_DATA_DIR_PATH . '_phpinc/_foot_main.inc' );
 	?>
 
 	</body>

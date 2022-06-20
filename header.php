@@ -7,7 +7,8 @@
  * @package ndnation
  */
 // Uncomment this line when pushing to Production
-require("/home/elkabong/public_html/data/_phpinc/_allfunc.inc");
+if( ! NDNATION_DEV_ENV )
+	require_once( NDNATION_DATA_DIR_PATH . '_phpinc/_allfunc.inc' );
 ?>
 
 <!DOCTYPE html>
@@ -23,8 +24,8 @@ require("/home/elkabong/public_html/data/_phpinc/_allfunc.inc");
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 	<?php 
-		wp_head(); 
-		require("/home/elkabong/public_html/data/_phpinc/_head_main.inc");
+		wp_head();
+		require_once( NDNATION_DATA_DIR_PATH . '_phpinc/_head_main.inc' );
 	?>
 </head>
 

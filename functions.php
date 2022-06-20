@@ -11,6 +11,13 @@
   */
  define('THEME_DIR_PATH', get_template_directory());
  define('THEME_DIR_URI', get_template_directory_uri());
+ define( 'NDNATION_DATA_DIR_PATH', THEME_DIR_PATH . '/../../../data/' );
+
+/**
+ * Detect "development" environment
+ */
+$dev_env = ( '.local' == stristr( site_url(), '.local' ) ) ? true : false ;
+define( 'NDNATION_DEV_ENV', $dev_env );
 
 
 /**
