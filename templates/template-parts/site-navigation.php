@@ -8,7 +8,7 @@
 * @package 	ndnation
 * @version  2.1.1
 */
-$keywords = $_GET['s'];
+$keywords = ( isset( $_GET['s'] ) )? $_GET['s'] : null ;
 ?>
 
 	<nav class="site-navigation">

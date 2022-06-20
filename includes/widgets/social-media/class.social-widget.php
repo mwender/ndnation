@@ -50,7 +50,7 @@ class SocialWidget extends WP_Widget {
 							$socmed_target   = get_sub_field('socmed_target');
 					?>
 						<li class="socmed-item">
-							<a href="<?php echo $socmed_link; ?>"<?php echo (($socmed_target[0] == 'yes') ? ' target="_blank" ' : ''); ?>title="<?php echo $socmed_name; ?>">
+							<a href="<?php echo $socmed_link; ?>"<?php echo ( ( is_array( $socmed_target ) && array_key_exists( 0, $socmed_target ) && $socmed_target[0] == 'yes' ) ? ' target="_blank" ' : ''); ?>title="<?php echo $socmed_name; ?>">
 								<i class="<?php echo $prefix . ' ' . $socmed_fa_class; ?>"></i>
 							</a>
 						</li>

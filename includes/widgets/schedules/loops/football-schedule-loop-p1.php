@@ -10,11 +10,11 @@
 					$football_loop_p1->the_post();
 					$game_date_ini  = get_field('game_date');
 					$game_date      = preg_split("/[-]+/", $game_date_ini);
-					$game_day       = $game_date[2];
-					$game_month     = $game_date[1];
+					$game_day       = ( is_array( $game_date ) && array_key_exists( 2, $game_date ) )? $game_date[2] : null ;
+					$game_month     = ( is_array( $game_date ) && array_key_exists( 1, $game_date ) )? $game_date[1] : null ;
 					$game_year      = $game_date[0];
 					$game_time_ini  = get_field('game_time');
-					$tz             = $_GET['tz'];
+					$tz             = ( isset( $_GET['tz'] ) ) ? $_GET['tz'] : null ;
 					if($tz == 'pacific'){
 						$game_time_str  = strtotime($game_time_ini) - 7200;
 					}
@@ -35,18 +35,18 @@
 					$opponent_score = get_field('opponent_score');
 					$homeaway_ini   = get_field('homeaway');
 					$neut_site_arr   = get_field('neut_site');
-					$neut_site       = $neut_site_arr[0];
+					$neut_site       = ( is_array( $neut_site_arr ) && array_key_exists( 0, $neut_site_arr ) )? $neut_site_arr[0] : null ;
 					if($neut_site == 'yes'){
 						$neut_site_name = get_field('neut_site_name');
 						$neut_site_city = get_field('neut_site_city');
 					}
 					$conf_champ_arr   = get_field('conf_champ');
-					$conf_champ       = $conf_champ_arr[0];
+					$conf_champ       = ( is_array( $conf_champ_arr ) && array_key_exists( 0, $conf_champ_arr ) )? $conf_champ_arr[0] : null ;
 					if($conf_champ == 'yes'){
 						$conf_champ_name = get_field('conf_champ_name');
 					}
 					$bowl_game_arr    = get_field('bowl_game');
-					$bowl_game        = $bowl_game_arr[0];
+					$bowl_game       = ( is_array( $bowl_game_arr ) && array_key_exists( 0, $bowl_game_arr ) )? $bowl_game_arr[0] : null ;
 					if($bowl_game == 'yes'){
 						$bowl_name       .= get_field('bowl_name');
 					}

@@ -24,7 +24,7 @@ class schedules_widget extends WP_Widget {
 			}
 			extract($args);
 			$sched_title       = ( ! empty( $instance['sched_title'] ) ) ? $instance['sched_title'] : __( 'Schedule' );
-			$sched_cat         = $instance['sched_cat'];
+			$sched_cat         = ( is_array( $instance ) && array_key_exists( 'sched_cat', $instance ) )? $instance['sched_cat'] : null ;
 			$add_sched_years   = $instance['incl_additional_fball_sched_years'];
 
 			// Football Vars
