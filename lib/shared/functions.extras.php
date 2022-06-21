@@ -200,7 +200,7 @@ function custom_excerpt($len,$read_more){
         $full_exc = $exc;
         $last = array_pop($exc);
         $end = strrev($last);
-        $found = in_array($end{0}, $allowed_end);
+        $found = in_array($end[0], $allowed_end);
         $new_cont = implode(' ', $full_exc);
     }
     echo '<p>' . $new_cont . '</p>';
