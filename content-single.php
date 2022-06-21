@@ -5,6 +5,11 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php
+	if( is_active_sidebar( 'article-before-content' ) ){
+		dynamic_sidebar( 'article-before-content' );
+	}
+	?>
 	<header>
 		<h1 class="page-title"><?php the_title(); ?></h1>
 

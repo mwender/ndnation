@@ -92,6 +92,16 @@ function ndnation_widgets_init() {
 	);
 	register_sidebar(
 		array(
+			'name'          => __( 'Article Before Content', 'ndnation' ),
+			'id'            => 'article-before-content',
+			'before_widget' => '<div id="%1$s" class="article-before-content %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="article-before-content">',
+			'after_title'   => '</h3>',
+		)
+	);
+	register_sidebar(
+		array(
 			'name'          => __( 'Premium Ad Slot', 'ndnation' ),
 			'id'            => 'premium-ad-slot',
 			'before_widget' => '<div id="%1$s" class="local-ad %2$s">',
