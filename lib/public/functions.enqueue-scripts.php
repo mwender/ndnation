@@ -24,7 +24,8 @@ function ndnation_scripts() {
 	wp_enqueue_style( 'font-awesome-free', '//use.fontawesome.com/releases/v5.0.12/css/all.css' );
 
 	// load ndnation styles
-	wp_enqueue_style( 'ndnation-style', get_stylesheet_uri() );
+	$theme_css = ( NDNATION_DEV_ENV )? 'style.css' : 'style.min.css';
+	wp_enqueue_style( 'ndnation-style', trailingslashit( THEME_DIR_URI ) . 'lib/public/css/' . $theme_css );
 
 	// load fonts
 	wp_enqueue_style('ndnation-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|Roboto+Slab:400,700');
