@@ -26,6 +26,7 @@ class schedules_widget extends WP_Widget {
 			$sched_title       = ( ! empty( $instance['sched_title'] ) ) ? $instance['sched_title'] : __( 'Schedule' );
 			$sched_cat         = ( is_array( $instance ) && array_key_exists( 'sched_cat', $instance ) )? $instance['sched_cat'] : null ;
 			$add_sched_years   = $instance['incl_additional_fball_sched_years'];
+			$remove_additional_html = $instance['remove_additional_html'];
 
 			// Football Vars
 			$sched_year_cat        = $instance['sched_year_cat'];
@@ -238,6 +239,7 @@ class schedules_widget extends WP_Widget {
 	    $hockey_set5 = $hockey_loop->have_posts() && $mhoops_loop->have_posts();
 	    $hockey_set6 = $hockey_loop->have_posts() && $whoops_loop->have_posts();
 ?>
+				<?php if( ! $remove_additional_html ): ?>
 				<div class="content-box nopad-r">
 					<div class="sidebar-padder">
 						<?php echo $before_widget; ?>
@@ -250,6 +252,12 @@ class schedules_widget extends WP_Widget {
 							</div>
 							<div id="schedule-wrap" class="widget-wrap">
 								<div class="widget-body">
+				<?php endif; ?>
+									<?php if( $remove_additional_html ): echo '<div id="schedule-wrap">'; ?>
+									<div class="topper-wide">
+										<h2><?= $sched_title; ?></h2>
+									</div>
+									<?php endif; ?>
 									<div id="js-schedule-tabs" class="schedule-tabs">
 										<?php
 											if( $all_set || $fball_set1 || $fball_set2 || $fball_set3 || $fball_set4 || $fball_set5 || $fball_set6 || $mbball_set1 || $mbball_set2 || $mbball_set3 || $mbball_set4 || $mbball_set5 || $mbball_set6 || $wbball_set1 || $wbball_set2 || $wbball_set3 || $wbball_set4 || $wbball_set5 || $wbball_set6 || $hockey_set1 || $hockey_set2 || $hockey_set3 || $hockey_set4 || $hockey_set5 || $hockey_set6){
@@ -303,12 +311,15 @@ class schedules_widget extends WP_Widget {
 												<?php include_once('loops/hockey-schedule-loop.php'); ?>
 											</div>
 										<?php } ?>
-									</div>
+									</div><!-- #js-schedule-tabs -->
+									<?php if( $remove_additional_html ){ echo '</div><!-- #schedule-wrap -->'; } ?>
+				<?php if( ! $remove_additional_html ): ?>
 							<div class="clear"></div>
 						</div>
 						<?php echo $args['after_widget']; ?>
 					</div>
 				</div>
+				<?php endif; ?>
 <?php
 
 	}
@@ -326,9 +337,10 @@ class schedules_widget extends WP_Widget {
 		$echo           = 'checked = "checked"';
 		$sched_cat      = $instance['sched_cat'];
 		$sched_year_cat = $instance['sched_year_cat'];
-		$mbball_sched_year_cat = $instance['mbball_sched_year_cat'];
-		$wbball_sched_year_cat = $instance['wbball_sched_year_cat'];
-		$hockey_sched_year_cat = $instance['hockey_sched_year_cat'];
+		$mbball_sched_year_cat 	= $instance['mbball_sched_year_cat'];
+		$wbball_sched_year_cat 	= $instance['wbball_sched_year_cat'];
+		$hockey_sched_year_cat 	= $instance['hockey_sched_year_cat'];
+		$remove_additional_html	= $instance['remove_additional_html'];
 		$terms = get_terms(
 			'game_cat',
 			array(
@@ -421,6 +433,11 @@ class schedules_widget extends WP_Widget {
 				?>
 			</select>
 		</p>
+		<p>
+			<label for="<?= $this->get_field_id( 'remove_additional_html' ); ?>">
+				<input class="widefat" id="<?= $this->get_field_id( 'remove_additional_html' ); ?>" name="<?= $this->get_field_name( 'remove_additional_html' ); ?>" type="checkbox" value="1" <?= checked( $remove_additional_html, 1 ) ?>> Remove additional HTML around widget?
+			</label>
+		</p>
 <?php
 	}
 	/**
@@ -441,6 +458,7 @@ class schedules_widget extends WP_Widget {
 			$instance['mbball_sched_year_cat'] = ( ! empty( $new_instance['mbball_sched_year_cat'] ) ) ? strip_tags( $new_instance['mbball_sched_year_cat'] ) : '';
 			$instance['wbball_sched_year_cat'] = ( ! empty( $new_instance['wbball_sched_year_cat'] ) ) ? strip_tags( $new_instance['wbball_sched_year_cat'] ) : '';
 			$instance['hockey_sched_year_cat'] = ( ! empty( $new_instance['hockey_sched_year_cat'] ) ) ? strip_tags( $new_instance['hockey_sched_year_cat'] ) : '';
+			$instance['remove_additional_html'] = ( ! empty( $new_instance['remove_additional_html'] ) ) ? strip_tags( $new_instance['remove_additional_html'] ) : 0;
 			return $instance;
 		}
 }
