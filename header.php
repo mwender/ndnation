@@ -35,9 +35,11 @@ if( ! NDNATION_DEV_ENV )
 	<?php get_template_part( 'templates/template-parts/header'); ?>
 
 	<?php 
-		if ( is_front_page() && !is_home() ){
-			get_template_part( 'templates/template-parts/home-page-content-wrapper-start'); 
-		} else {
-			get_template_part( 'templates/template-parts/main-content-wrapper-start'); 
+		if( 'tmpl-home-2.php' != basename(get_page_template()) ){
+			if ( is_front_page() && ! is_home() ){
+				get_template_part( 'templates/template-parts/home-page-content-wrapper-start');
+			} else {
+				get_template_part( 'templates/template-parts/main-content-wrapper-start');
+			}
 		}
 	?>

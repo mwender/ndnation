@@ -9,7 +9,10 @@
 $site_name = get_field('site_name', 'option');
 ?>
 
-	<?php get_template_part( 'templates/template-parts/main-content-wrapper-end'); ?>
+	<?php
+	if( 'tmpl-home-2.php' != basename(get_page_template()) )
+		get_template_part( 'templates/template-parts/main-content-wrapper-end');
+	?>
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 	<?php // substitute the class "container-fluid" below if you want a wider content area ?>
