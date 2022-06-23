@@ -18,6 +18,8 @@ get_header();
 	.topper-wide h2{margin: 0; padding: 5px 10px; background-color: #c99700; color: #0c2340; font-size: 1.6em; font-weight: bold; border-bottom: 5px solid #fff;}
 	#schedule-wrap{margin-top: 0;}
 	#schedule-wrap .topper-wide{margin-bottom: 1em;}
+	.rectangle-ad{height: 280px; background-color: rgba(224, 224, 224, .5); border: 1px solid rgba(224, 224, 224, 1);}
+	.skyscraper-ad{height: 598px; background-color: rgba(224, 224, 224, .5); border: 1px solid rgba(224, 224, 224, 1);}
 </style>
 <div class="container">
 	<?php

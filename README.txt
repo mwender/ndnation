@@ -13,6 +13,9 @@ Custom theme built based on Twitter Bootstrap and built for [ND Nation](https://
 
 == Changelog ==
 
+= 1.1.1 =
+* Adding ad placeholder CSS classes to `tmpl-home-2.php`.
+
 = 1.1.0 =
 * New template: `tmpl-home-2.php` with a full width top section followed by a row of recent posts and ending with a widgetized three column section.
 * Adding "Article Before Content" widget area for inserting widgets before post/article content.
