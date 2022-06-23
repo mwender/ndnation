@@ -43,6 +43,8 @@ $ndnation_includes = array(
     '/lib/public/functions.fusionfarm-functions.php',   // Custom fusionfarm functions
     '/lib/public/class.bootstrap-wp-navwalker.php',     // Load custom WordPress nav walker.
 
+    '/lib/public/shortcode.latest-news.php',            // Load Latest News shortcode handler.
+
     '/lib/plugins/functions.woocommerce.php',           // Woocommerce Hook & Filter Functions
 
     '/lib/admin/class.ff-theme-update-checker.php'      // Theme Update Checker
