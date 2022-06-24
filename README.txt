@@ -13,6 +13,9 @@ Custom theme built based on Twitter Bootstrap and built for [ND Nation](https://
 
 == Changelog ==
 
+= 1.1.2 =
+* Adjusting column classes in `tmpl-home-2.php` to maintain columns on tablets.
+
 = 1.1.1 =
 * Adding ad placeholder CSS classes to `tmpl-home-2.php`.
 

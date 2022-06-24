@@ -18,8 +18,9 @@ get_header();
 	.topper-wide h2{margin: 0; padding: 5px 10px; background-color: #c99700; color: #0c2340; font-size: 1.6em; font-weight: bold; border-bottom: 5px solid #fff;}
 	#schedule-wrap{margin-top: 0;}
 	#schedule-wrap .topper-wide{margin-bottom: 1em;}
-	.rectangle-ad{height: 280px; background-color: rgba(224, 224, 224, .5); border: 1px solid rgba(224, 224, 224, 1);}
-	.skyscraper-ad{height: 598px; background-color: rgba(224, 224, 224, .5); border: 1px solid rgba(224, 224, 224, 1);}
+	.rectangle-ad, .skyscraper-ad{background-color: rgba(224, 224, 224, .5); border: 1px solid rgba(224, 224, 224, 1); margin-bottom: 1em;}
+	.rectangle-ad{height: 280px;}
+	.skyscraper-ad{height: 598px;}
 </style>
 <div class="container">
 	<?php
@@ -52,7 +53,7 @@ get_header();
 		foreach( $latest_posts as $post ):
 			setup_postdata( $post );
 			?>
-			<div class="col-lg-4">
+			<div class="col-md-4">
         <header>
           <h4 class="article-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h4>
         </header>
@@ -69,21 +70,21 @@ get_header();
 	/**/
 	?>
 	<div class="row">
-		<div class="col-lg-4">
+		<div class="col-md-4">
 			<?php
 				if( is_active_sidebar( 'home-2-column-1' ) ){
 					dynamic_sidebar( 'home-2-column-1' );
 				}
 			?>
 		</div>
-		<div class="col-lg-4">
+		<div class="col-md-4">
 			<?php
 				if( is_active_sidebar( 'home-2-column-2' ) ){
 					dynamic_sidebar( 'home-2-column-2' );
 				}
 			?>
 		</div>
-		<div class="col-lg-4">
+		<div class="col-md-4">
 			<?php
 				if( is_active_sidebar( 'home-2-column-3' ) ){
 					dynamic_sidebar( 'home-2-column-3' );
