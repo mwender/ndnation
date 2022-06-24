@@ -18,7 +18,7 @@ get_header();
 	.topper-wide h2{margin: 0; padding: 5px 10px; background-color: #c99700; color: #0c2340; font-size: 1.6em; font-weight: bold; border-bottom: 5px solid #fff;}
 	#schedule-wrap{margin-top: 0;}
 	#schedule-wrap .topper-wide{margin-bottom: 1em;}
-	.rectangle-ad, .skyscraper-ad{background-color: rgba(224, 224, 224, .5); border: 1px solid rgba(224, 224, 224, 1); margin-bottom: 1em;}
+	.rectangle-ad, .skyscraper-ad{background-color: rgba(224, 224, 224, .5); border: 1px solid rgba(224, 224, 224, 1); background-image: url('<?= THEME_DIR_URI ?>/images/ad-placeholder_1024x1024.png');background-size: contain;background-position: center center;background-repeat: no-repeat; margin-bottom: 1em;}
 	.rectangle-ad{height: 280px;}
 	.skyscraper-ad{height: 598px;}
 </style>
