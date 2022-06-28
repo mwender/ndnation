@@ -13,6 +13,12 @@ Custom theme built based on Twitter Bootstrap and built for [ND Nation](https://
 
 ## Changelog ##
 
+### 1.2.0 ###
+* Reworked layout for "Home 2" template.
+* Adding new sidebars for `tmpl-home-2.php`: "Home 2 - Top Wide Ad Slot", "Home 2 - Top Left 2/3", "Home 2 - Top Right 1/3", and "Home 2 - News Row".
+* Updating `[latestnews]` shortcode with `category` and `css_classes` attributes.
+* Adding `uber_log()` for debugging.
+
 ### 1.1.3 ###
 * Adding "Ad Placeholder" graphic to placeholders in `tmpl-home-2.php`.
 
