@@ -335,12 +335,12 @@ class schedules_widget extends WP_Widget {
 		$sched_title    = isset( $instance['sched_title'] ) ? esc_attr( $instance['sched_title'] ) : 'Schedule';
 		$checked        = $instance['incl_additional_fball_sched_years'];
 		$echo           = 'checked = "checked"';
-		$sched_cat      = $instance['sched_cat'];
+		$sched_cat      = ( array_key_exists( 'sched_cat', $instance ) )? $instance['sched_cat'] : '' ;
 		$sched_year_cat = $instance['sched_year_cat'];
 		$mbball_sched_year_cat 	= $instance['mbball_sched_year_cat'];
 		$wbball_sched_year_cat 	= $instance['wbball_sched_year_cat'];
-		$hockey_sched_year_cat 	= $instance['hockey_sched_year_cat'];
-		$remove_additional_html	= $instance['remove_additional_html'];
+		$hockey_sched_year_cat 	= ( array_key_exists( 'hockey_sched_year_cat', $instance ) )? $instance['hockey_sched_year_cat'] : '';
+		$remove_additional_html	= ( array_key_exists( 'remove_additional_html', $instance ) )? $instance['remove_additional_html'] : '';
 		$terms = get_terms(
 			'game_cat',
 			array(
@@ -361,13 +361,13 @@ class schedules_widget extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id( 'sched_year_cat' ); ?>"><?php _e( 'Football Schedule Year:' ); ?></label>
 			<select id="<?php echo $this->get_field_id( 'sched_year_cat' ); ?>" class="widefat" name="<?php echo $this->get_field_name( 'sched_year_cat' ); ?>">
-				<option value="" <?php echo (($instance['sched_year_cat'] == '') ? 'selected' : ''); ?>>Select Schedule Year</option>
+				<option value="" <?php echo (( array_key_exists( 'sched_year_cat', $instance ) && $instance['sched_year_cat'] == '') ? 'selected' : ''); ?>>Select Schedule Year</option>
 				<?php
 					foreach ($terms_year as $term_year) {
 						$term_year_id = $term_year->term_id;
 						$term_year_name = $term_year->name;
 				?>
-						<option value="<?php echo $term_year_id; ?>" <?php echo (($instance['sched_year_cat'] == $term_year_id) ? 'selected' : ''); ?>><?php echo $term_year_name;?></option>
+						<option value="<?php echo $term_year_id; ?>" <?php echo (( array_key_exists( 'sched_year_cat', $instance ) && $instance['sched_year_cat'] == $term_year_id) ? 'selected' : ''); ?>><?php echo $term_year_name;?></option>
 				<?php
 					}
 				?>
@@ -382,16 +382,16 @@ class schedules_widget extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id( 'mbball_sched_year_cat' ); ?>"><?php _e( 'Men\'s Basketball Schedule Year:' ); ?></label>
 			<select id="<?php echo $this->get_field_id( 'mbball_sched_year_cat' ); ?>" class="widefat" name="<?php echo $this->get_field_name( 'mbball_sched_year_cat' ); ?>">
-				<option value="" <?php echo (($instance['mbball_sched_year_cat'] == '') ? 'selected' : ''); ?>>Select Schedule Year</option>
+				<option value="" <?php echo (( array_key_exists( 'mbball_sched_year_cat', $instance ) && $instance['mbball_sched_year_cat'] == '') ? 'selected' : ''); ?>>Select Schedule Year</option>
 				<?php
 					foreach ($terms_year as $mbball_term_year) {
 						$mbball_term_year_id = $mbball_term_year->term_id;
 						$mbball_term_year_name = $mbball_term_year->name;
-						$prev_year_ini = str_replace(' Schedule', '', $mbball_term_year_name);
+						$prev_year_ini = intval( str_replace(' Schedule', '', $mbball_term_year_name) );
 						$prev_year = $prev_year_ini - 1;
 						$mbball_select_name = $prev_year . '-' . $mbball_term_year_name;
 				?>
-						<option value="<?php echo $mbball_term_year_id; ?>" <?php echo (($instance['mbball_sched_year_cat'] == $mbball_term_year_id) ? 'selected' : ''); ?>><?php echo $mbball_select_name;?></option>
+						<option value="<?php echo $mbball_term_year_id; ?>" <?php echo (( array_key_exists( 'mbball_sched_year_cat', $instance ) && $instance['mbball_sched_year_cat'] == $mbball_term_year_id) ? 'selected' : ''); ?>><?php echo $mbball_select_name;?></option>
 				<?php
 					}
 				?>
@@ -405,11 +405,11 @@ class schedules_widget extends WP_Widget {
 					foreach ($terms_year as $wbball_term_year) {
 						$wbball_term_year_id = $wbball_term_year->term_id;
 						$wbball_term_year_name = $wbball_term_year->name;
-						$prev_year_ini = str_replace(' Schedule', '', $wbball_term_year_name);
+						$prev_year_ini = intval( str_replace(' Schedule', '', $wbball_term_year_name) );
 						$prev_year = $prev_year_ini - 1;
 						$wbball_select_name = $prev_year . '-' . $wbball_term_year_name;
 				?>
-						<option value="<?php echo $wbball_term_year_id; ?>" <?php echo (($instance['wbball_sched_year_cat'] == $wbball_term_year_id) ? 'selected' : ''); ?>><?php echo $wbball_select_name;?></option>
+						<option value="<?php echo $wbball_term_year_id; ?>" <?php echo ( ( array_key_exists( 'wbball_sched_year_cat', $instance ) && $instance['wbball_sched_year_cat'] == $wbball_term_year_id ) ? 'selected' : ''); ?>><?php echo $wbball_select_name;?></option>
 				<?php
 					}
 				?>
@@ -418,16 +418,16 @@ class schedules_widget extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id( 'hockey_sched_year_cat' ); ?>"><?php _e( 'Hockey Schedule Year:' ); ?></label>
 			<select id="<?php echo $this->get_field_id( 'hockey_sched_year_cat' ); ?>" class="widefat" name="<?php echo $this->get_field_name( 'hockey_sched_year_cat' ); ?>">
-				<option value="" <?php echo (($instance['hockey_sched_year_cat'] == '') ? 'selected' : ''); ?>>Select Schedule Year</option>
+				<option value="" <?php echo ( ( array_key_exists( 'hockey_sched_year_cat', $instance ) && $instance['hockey_sched_year_cat'] == '' ) ? 'selected' : ''); ?>>Select Schedule Year</option>
 				<?php
 					foreach ($terms_year as $hockey_term_year) {
 						$hockey_term_year_id = $hockey_term_year->term_id;
 						$hockey_term_year_name = $hockey_term_year->name;
-						$prev_year_ini = str_replace(' Schedule', '', $hockey_term_year_name);
+						$prev_year_ini = intval( str_replace(' Schedule', '', $hockey_term_year_name) );
 						$prev_year = $prev_year_ini - 1;
 						$hockey_select_name = $prev_year . '-' . $hockey_term_year_name;
 				?>
-						<option value="<?php echo $hockey_term_year_id; ?>" <?php echo (($instance['hockey_sched_year_cat'] == $hockey_term_year_id) ? 'selected' : ''); ?>><?php echo $hockey_select_name;?></option>
+						<option value="<?php echo $hockey_term_year_id; ?>" <?php echo ( ( array_key_exists( 'hockey_sched_year_cat', $instance ) && $instance['hockey_sched_year_cat'] == $hockey_term_year_id ) ? 'selected' : ''); ?>><?php echo $hockey_select_name;?></option>
 				<?php
 					}
 				?>
