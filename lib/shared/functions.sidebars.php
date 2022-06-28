@@ -12,6 +12,16 @@ function ndnation_widgets_init() {
 
 	register_sidebar(
 		array(
+			'name'          => __( 'Home 2 - Top Wide Ad Slot', 'ndnation' ),
+			'id'            => 'home-2-top-wide-ad-slot',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
+	register_sidebar(
+		array(
 			'name'          => __( 'Home 2 - Top', 'ndnation' ),
 			'id'            => 'home-2-top',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -20,6 +30,37 @@ function ndnation_widgets_init() {
 			'after_title'   => '</h3>',
 		)
 	);
+	register_sidebar(
+		array(
+			'name'          => __( 'Home 2 - Top Left 2/3', 'ndnation' ),
+			'id'            => 'home-2-top-left-two-thirds',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => __( 'Home 2 - Top Right 1/3', 'ndnation' ),
+			'id'            => 'home-2-top-left-one-third',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => __( 'Home 2 - News Row', 'ndnation' ),
+			'id'            => 'home-2-news-row',
+			'before_widget' => '<div id="%1$s" class="col-md-4 widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
+
 	register_sidebar(
 		array(
 			'name'          => __( 'Home 2 - Column 1', 'ndnation' ),
