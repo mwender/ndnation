@@ -21,54 +21,47 @@ get_header();
 	.rectangle-ad, .skyscraper-ad{background-color: rgba(224, 224, 224, .5); border: 1px solid rgba(224, 224, 224, 1); background-image: url('<?= THEME_DIR_URI ?>/images/ad-placeholder_1024x1024.png');background-size: contain;background-position: center center;background-repeat: no-repeat; margin-bottom: 1em;}
 	.rectangle-ad{height: 280px;}
 	.skyscraper-ad{height: 598px;}
+	.row.news .widget .nl-list{min-height: 250px; display: flex; flex-direction: column; justify-content: space-between;}
 </style>
+<?php
+	if( is_active_sidebar( 'home-2-top-wide-ad-slot' ) ){ ?>
+		<div class="row home-hero">
+			<div class="col-md-12"><?php dynamic_sidebar('home-2-top-wide-ad-slot'); ?></div>
+		</div><!-- .home-hero -->
+<?php	} ?>
 <div class="container">
 	<?php
-		if( is_active_sidebar( 'home-2-top' ) ){
-			echo '<div class="row home-hero"><div class="col-lg-12">';
-			dynamic_sidebar('home-2-top');
-			echo '</div></div>';
-		} else if( current_user_can( 'edit_posts' ) ){
-	?>
-	<div class="row">
-		<div class="col-lg-12"><code>Home 2 - Top Sidebar</code></div>
-	</div>
-	<?php
-		}
+	/**
+	 * LATEST POSTS TEMPLATE
+	 *
+	 * This is a completely self-contained row. Add this code
+	 * in between rows in tmpl-home-2.php.
+	 */
+	get_template_part( 'templates/template-parts/home-2', 'latest-posts' );
 	?>
 	<?php
-	//*
-	$latest_posts = get_posts( [ 'numberposts' => 3 ] );
-	if( $latest_posts ){
-		?>
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="topper-wide">
-						<h2>Latest Columns</h2>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-		<?php
-		foreach( $latest_posts as $post ):
-			setup_postdata( $post );
-			?>
-			<div class="col-md-4">
-        <header>
-          <h4 class="article-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h4>
-        </header>
-				<div class="post-excerpt">
-          <?php the_excerpt(); ?>
-				</div>
-			</div>
-
-			<?php
-		endforeach;
-		?></div><!-- .row --><?php
-		wp_reset_postdata();
-	}
-	/**/
-	?>
+		if( is_active_sidebar( 'home-2-top' ) ){ ?>
+			<div class="row home-hero">
+				<div class="col-md-12"><?= dynamic_sidebar('home-2-top'); ?></div>
+			</div><!-- .home-hero -->
+	<?php	} ?>
+	<?php
+		if( is_active_sidebar( 'home-2-top-left-two-thirds' ) || is_active_sidebar( 'home-2-top-left-one-third' ) ){ ?>
+			<div class="row home-hero">
+				<div class="col-md-8"><?php dynamic_sidebar('home-2-top-left-two-thirds'); ?></div>
+				<div class="col-md-4"><?php dynamic_sidebar('home-2-top-left-one-third'); ?></div>
+			</div><!-- .home-hero -->
+	<?php	} ?>
+	<?php if( is_active_sidebar( 'home-2-news-row' ) ): ?>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="topper-wide">
+          <h2>Latest News</h2>
+      </div>
+    </div>
+  </div>
+  <div class="row news"><?php dynamic_sidebar( 'home-2-news-row' ); ?></div>
+	<?php endif; ?>
 	<div class="row">
 		<div class="col-md-4">
 			<?php
