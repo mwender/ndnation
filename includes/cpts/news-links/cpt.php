@@ -175,8 +175,11 @@ function news_links_cat_save_form_fields($term_id) {
 
 function news_links_cat_edit_form_fields ($term_obj) {
     // Read in the order from the options db
-    $term_id = $term_obj->term_id;
-    $term_metas = get_option("taxonomy_{$term_id}_metas");
+    if( is_object( $term_obj ) ){
+        $term_id = $term_obj->term_id;
+        $term_metas = get_option("taxonomy_{$term_id}_metas");
+    }
+
     if ( isset($term_metas['category-order']) ) {
         $cat_order = $term_metas['category-order'];
     } else {
