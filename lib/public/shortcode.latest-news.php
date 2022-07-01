@@ -6,6 +6,7 @@ function get_latest_news( $atts ){
   $args = shortcode_atts([
     'category'    => null,
     'css_classes' => 'nopad section',
+    'limit'       => 5,
   ], $atts );
   if( is_null( $args['category'] ) || empty( $args['category'] ) )
     return '<div>Please specify a <code>category</code>.</div>';
@@ -22,9 +23,12 @@ function get_latest_news( $atts ){
     $cclass = '';
   }
 
+  if( ! is_numeric( $args['limit'] ) )
+    $args['limit'] = 5;
+
   $get_posts_args = [
     'post_type'   => 'news_links',
-    'numberposts' => 5,
+    'numberposts' => $args['limit'],
     'tax_query'   => [
       [
         'taxonomy'  => 'news_links_cat',
