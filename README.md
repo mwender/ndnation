@@ -13,6 +13,11 @@ Custom theme built based on Twitter Bootstrap and built for [ND Nation](https://
 
 ## Changelog ##
 
+### 1.3.0 ###
+* Adding "Home 2 - News Row (1/3 Width)" and "Home 2 - News Row (2/3 Width)" sidebars.
+* Grid CSS layout for "Home 2 - News Row (2/3 Width)" sidebar.
+* Adding "limit" attribute for `[latestnews]` shortcode.
+
 ### 1.2.0 ###
 * Reworked layout for "Home 2" template.
 * Adding new sidebars for `tmpl-home-2.php`: "Home 2 - Top Wide Ad Slot", "Home 2 - Top Left 2/3", "Home 2 - Top Right 1/3", and "Home 2 - News Row".
