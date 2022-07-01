@@ -14,14 +14,16 @@ get_header();
 	.home-hero .widget-title{display: none;}
 	.home-hero .widget, .col-lg-4 .widget{margin-bottom: 1em;}
 	.row{margin-bottom: 1em;}
-	.topper-wide{border-bottom: 4px solid #c99700;}
+	.topper-wide{content: ' ';border-bottom: 4px solid #c99700;}
 	.topper-wide h2{margin: 0; padding: 5px 10px; background-color: #c99700; color: #0c2340; font-size: 1.6em; font-weight: bold; border-bottom: 5px solid #fff;}
+	.home-hero .topper-wide{margin-bottom: 1em;}
 	#schedule-wrap{margin-top: 0;}
 	#schedule-wrap .topper-wide{margin-bottom: 1em;}
 	.rectangle-ad, .skyscraper-ad{background-color: rgba(224, 224, 224, .5); border: 1px solid rgba(224, 224, 224, 1); background-image: url('<?= THEME_DIR_URI ?>/images/ad-placeholder_1024x1024.png');background-size: contain;background-position: center center;background-repeat: no-repeat; margin-bottom: 1em;}
 	.rectangle-ad{height: 280px;}
 	.skyscraper-ad{height: 598px;}
-	.row.news .widget .nl-list{min-height: 250px; display: flex; flex-direction: column; justify-content: space-between;}
+	/*.row.news .widget .nl-list{min-height: 250px; display: flex; flex-direction: column; justify-content: space-between;}*/
+	.row.home-hero .nl-title h3{margin-top: 0}
 </style>
 <?php
 	if( is_active_sidebar( 'home-2-top-wide-ad-slot' ) ){ ?>
@@ -48,19 +50,51 @@ get_header();
 	<?php
 		if( is_active_sidebar( 'home-2-top-left-two-thirds' ) || is_active_sidebar( 'home-2-top-left-one-third' ) ){ ?>
 			<div class="row home-hero">
-				<div class="col-md-8"><?php dynamic_sidebar('home-2-top-left-two-thirds'); ?></div>
-				<div class="col-md-4"><?php dynamic_sidebar('home-2-top-left-one-third'); ?></div>
+				<div class="col-md-8">
+					<?php dynamic_sidebar('home-2-top-left-two-thirds'); ?>
+				</div>
+				<div class="col-md-4">
+		      <div class="topper-wide">
+		        <h2>Latest News</h2>
+		      </div>
+		      <div>
+						<?php dynamic_sidebar('home-2-top-left-one-third'); ?>
+					</div>
+				</div>
 			</div><!-- .home-hero -->
 	<?php	} ?>
 	<?php if( is_active_sidebar( 'home-2-news-row' ) ): ?>
   <div class="row">
     <div class="col-lg-12">
       <div class="topper-wide">
-          <h2>Latest News</h2>
+        <h2>Latest News</h2>
       </div>
     </div>
   </div>
   <div class="row news"><?php dynamic_sidebar( 'home-2-news-row' ); ?></div>
+	<?php endif; ?>
+	<?php if( is_active_sidebar( 'home-2-news-row-one-third') || is_active_sidebar( 'home-2-news-row-two-thirds') ): ?>
+	<div class="row news">
+    <div class="col-md-4">
+    	<?php dynamic_sidebar( 'home-2-news-row-one-third' ); ?>
+  	</div>
+    <div class="col-md-8">
+      <div class="topper-wide">
+          <h2>More News</h2>
+      </div>
+      		<style type="text/css">
+		      	.news-grid{
+		      		display: grid;
+		      		grid-template-columns: repeat(auto-fill, minmax(33%, 1fr)); /* see notes below */
+		      		gap: 1.5em;
+		      	}
+		      	.news-grid:before{
+		      		display: none;
+		      	}
+		      </style>
+      <div class="news news-grid" id="grid"><?php dynamic_sidebar( 'home-2-news-row-two-thirds' ); ?></div>
+    </div>
+  </div><!-- .row -->
 	<?php endif; ?>
 	<div class="row">
 		<div class="col-md-4">
