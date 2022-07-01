@@ -52,9 +52,30 @@ function ndnation_widgets_init() {
 	);
 	register_sidebar(
 		array(
-			'name'          => __( 'Home 2 - News Row', 'ndnation' ),
+			'name'          => __( 'Home 2 - News Row (Full Width)', 'ndnation' ),
 			'id'            => 'home-2-news-row',
 			'before_widget' => '<div id="%1$s" class="col-md-4 widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
+
+	register_sidebar(
+		array(
+			'name'          => __( 'Home 2 - News Row (1/3 Width)', 'ndnation' ),
+			'id'            => 'home-2-news-row-one-third',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => __( 'Home 2 - News Row (2/3 Width)', 'ndnation' ),
+			'id'            => 'home-2-news-row-two-thirds',
+			'before_widget' => '<div id="%1$s" class="colXXX-md-6 widget %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',
