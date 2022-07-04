@@ -91,6 +91,11 @@ get_header();
 		      	.news-grid:before{
 		      		display: none;
 		      	}
+		      	@media screen and (max-width: 768px) {
+		      		.news-grid{
+		      			display: block;
+		      		}
+		      	}
 		      </style>
       <div class="news news-grid" id="grid"><?php dynamic_sidebar( 'home-2-news-row-two-thirds' ); ?></div>
     </div>

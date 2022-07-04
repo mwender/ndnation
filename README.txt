@@ -17,6 +17,9 @@ Be sure you're run `npm install` to install the required NPM modules. Then run `
 
 == Changelog ==
 
+= 1.3.2 =
+* Mobile CSS adjustments for `tmpl-hom-2.php` News Grid.
+
 = 1.3.1 =
 * Compiling CSS via `css-minify --file lib/public/css/style.css --output lib/public/css/`.
 * Removing `$source_name` exceptions for "Other" and "Opponent" News Source terms.
