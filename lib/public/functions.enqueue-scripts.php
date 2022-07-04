@@ -26,6 +26,7 @@ function ndnation_scripts() {
 	// load ndnation styles
 	$theme_css = ( NDNATION_DEV_ENV )? 'style.css' : 'style.min.css';
 	wp_enqueue_style( 'ndnation-style', trailingslashit( THEME_DIR_URI ) . 'lib/public/css/' . $theme_css );
+	wp_enqueue_style( 'ndnation-style', trailingslashit( THEME_DIR_URI ) . 'lib/public/css/' . $theme_css, null, filemtime( trailingslashit( THEME_DIR_PATH ) . 'lib/public/css/' . $theme_css ) );
 
 	// load fonts
 	wp_enqueue_style('ndnation-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|Roboto+Slab:400,700');

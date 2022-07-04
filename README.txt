@@ -17,6 +17,9 @@ Be sure you're run `npm install` to install the required NPM modules. Then run `
 
 == Changelog ==
 
+= 1.3.3 =
+* Adding `filemtime()` version to theme style enqueuing.
+
 = 1.3.2 =
 * Mobile CSS adjustments for `tmpl-hom-2.php` News Grid.
 
