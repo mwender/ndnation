@@ -11,7 +11,15 @@ Custom theme for [ND Nation](https://ndnation.com).
 == Description ==
 Custom theme built based on Twitter Bootstrap and built for [ND Nation](https://ndnation.com).
 
+= Compiling CSS =
+
+Be sure you're run `npm install` to install the required NPM modules. Then run `css-minify --file lib/public/css/style.css --output lib/public/css/` to compile `lib/public/css/style.css` to `lib/public/css/style.min.css`.
+
 == Changelog ==
+
+= 1.3.1 =
+* Compiling CSS via `css-minify --file lib/public/css/style.css --output lib/public/css/`.
+* Removing `$source_name` exceptions for "Other" and "Opponent" News Source terms.
 
 = 1.3.0 =
 * Adding "Home 2 - News Row (1/3 Width)" and "Home 2 - News Row (2/3 Width)" sidebars.
