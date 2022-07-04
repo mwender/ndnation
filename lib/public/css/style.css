@@ -666,6 +666,20 @@ nav form.tk-page-nav, nav .input-group, nav .input-group-btn, nav .form-control 
   padding-top: 20px;
   text-transform: none;
 }
+
+/* Articles */
+article.post{
+  font-size: 1.25em;
+}
+@media only screen and (max-width: 768px){
+  .main-content .container{
+    width: 100%;
+  }
+  article.post{
+    font-size: 1em;
+  }
+}
+
 .mobile-hide {
   display: block;
 }
