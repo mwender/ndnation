@@ -17,6 +17,9 @@ Be sure you're run `npm install` to install the required NPM modules. Then run `
 
 == Changelog ==
 
+= 1.3.4 =
+* Setting `.home-hero` in `tmpl-home-2.php` to 100% width to prevent horizontal scroll.
+
 = 1.3.3 =
 * Adding `filemtime()` version to theme style enqueuing.
 

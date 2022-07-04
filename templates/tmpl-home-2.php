@@ -11,6 +11,7 @@ get_header();
 	.video-placeholder{background-color: #eee; width: 1140px; height: 642px;}
 	.container{padding-top: 20px; background-color: #fff; margin-bottom: 31px;}
 	.hide-title .widget-title{display: none;}
+	.home-hero{width: 100%;}
 	.home-hero .widget-title{display: none;}
 	.home-hero .widget, .col-lg-4 .widget{margin-bottom: 1em;}
 	.row{margin-bottom: 1em;}
