@@ -101,11 +101,8 @@
 												$source_slug_arr  = wp_list_pluck( $sources_arr, 'slug' );
 												$source_name_arr  = wp_list_pluck( $sources_arr, 'name' );
 												$source_slug      = $source_slug_arr[0];
-												if($source_slug == 'other' || $source_slug == 'opponent'){
-													$source_name = '';
-												} else {
-													$source_name      = ' ('.$source_name_arr[0] . ')';
-												}
+												$source_name      = ' ('.$source_name_arr[0] . ')';
+
 												if($date != get_the_date('l, F j, Y')){
 													$prev_date = $date;
 													$date = get_the_date('l, F j, Y');

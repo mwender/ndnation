@@ -151,11 +151,8 @@
 								$source_slug_arr  = wp_list_pluck( $sources_arr, 'slug' );
 								$source_name_arr  = wp_list_pluck( $sources_arr, 'name' );
 								$source_slug      = $source_slug_arr[0];
-								if($source_slug == 'other' || $source_slug == 'opponent'){
-									$source_name = '';
-								} else {
-									$source_name      = ' ('.$source_name_arr[0] . ')';
-								}
+								$source_name      = ' ('.$source_name_arr[0] . ')';
+
 						?>
 							<li class="nl-item">
 								<span class="nl-date"><?php echo $nlink_date; ?></span> <a href="<?php echo $nlink_url; ?>" target="_blank"><?php echo $nlink_title;?><?php echo $source_name; ?></a>
