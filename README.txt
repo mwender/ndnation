@@ -17,6 +17,9 @@ Be sure you're run `npm install` to install the required NPM modules. Then run `
 
 == Changelog ==
 
+= 1.4.0 =
+* Setting "Latest News" to show 2 articles and one ad.
+
 = 1.3.4 =
 * Setting `.home-hero` in `tmpl-home-2.php` to 100% width to prevent horizontal scroll.
 
