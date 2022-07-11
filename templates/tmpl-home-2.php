@@ -11,9 +11,7 @@ get_header();
 	.video-placeholder{background-color: #eee; width: 1140px; height: 642px;}
 	.container{padding-top: 20px; background-color: #fff; margin-bottom: 31px;}
 	.hide-title .widget-title{display: none;}
-	.home-hero{width: 100%;}
 	.home-hero .widget-title{display: none;}
-	.home-hero .widget, .col-lg-4 .widget{margin-bottom: 1em;}
 	.row{margin-bottom: 1em;}
 	.topper-wide{content: ' ';border-bottom: 4px solid #c99700;}
 	.topper-wide h2{margin: 0; padding: 5px 10px; background-color: #c99700; color: #0c2340; font-size: 1.6em; font-weight: bold; border-bottom: 5px solid #fff;}
@@ -49,7 +47,15 @@ get_header();
 			</div><!-- .home-hero -->
 	<?php	} ?>
 	<?php
-		if( is_active_sidebar( 'home-2-top-left-two-thirds' ) || is_active_sidebar( 'home-2-top-left-one-third' ) ){ ?>
+	/**
+	 * 2/3 + 1/3 Row
+	 *
+	 * Great for:
+	 *
+	 * - Video in 2/3 column
+	 * - Schedule in 1/3 column
+	 */
+	if( is_active_sidebar( 'home-2-top-left-two-thirds' ) || is_active_sidebar( 'home-2-top-left-one-third' ) ){ ?>
 			<div class="row home-hero">
 				<div class="col-md-8">
 					<?php dynamic_sidebar('home-2-top-left-two-thirds'); ?>
