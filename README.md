@@ -17,6 +17,9 @@ Be sure you're run `npm install` to install the required NPM modules. Then run `
 
 ## Changelog ##
 
+### 1.4.1 ###
+* Adding bottom margin below `.row.home-hero .col-md-8` for mobile.
+
 ### 1.4.0 ###
 * Setting "Latest News" to show 2 articles and one ad.
 

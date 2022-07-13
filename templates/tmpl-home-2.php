@@ -23,6 +23,11 @@ get_header();
 	.skyscraper-ad{height: 598px;}
 	/*.row.news .widget .nl-list{min-height: 250px; display: flex; flex-direction: column; justify-content: space-between;}*/
 	.row.home-hero .nl-title h3{margin-top: 0}
+	@media (max-width: 1080px) {
+		.row.home-hero .col-md-8{
+			margin-bottom: 1em;
+		}
+	}
 </style>
 <?php
 	if( is_active_sidebar( 'home-2-top-wide-ad-slot' ) ){ ?>
