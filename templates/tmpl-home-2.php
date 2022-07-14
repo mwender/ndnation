@@ -23,6 +23,7 @@ get_header();
 	.skyscraper-ad{height: 598px;}
 	/*.row.news .widget .nl-list{min-height: 250px; display: flex; flex-direction: column; justify-content: space-between;}*/
 	.row.home-hero .nl-title h3{margin-top: 0}
+	.top-margin .custom-html-widget{margin-top: 1em;}
 	@media (max-width: 1080px) {
 		.row.home-hero .col-md-8{
 			margin-bottom: 1em;

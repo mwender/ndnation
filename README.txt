@@ -17,6 +17,9 @@ Be sure you're run `npm install` to install the required NPM modules. Then run `
 
 == Changelog ==
 
+= 1.4.3 =
+* Adding `.top-margin .custom-html-widget` CSS for adding a Top Margin to the ad widget.
+
 = 1.4.2 =
 * Updating theme screenshot.
 * Updating theme description to use "WordPress" and not "Wordpress".
