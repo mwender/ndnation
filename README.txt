@@ -17,6 +17,10 @@ Be sure you're run `npm install` to install the required NPM modules. Then run `
 
 == Changelog ==
 
+= 1.4.2 =
+* Updating theme screenshot.
+* Updating theme description to use "WordPress" and not "Wordpress".
+
 = 1.4.1 =
 * Adding bottom margin below `.row.home-hero .col-md-8` for mobile.
 
